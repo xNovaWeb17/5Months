@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5Months</title>
+    
+    <style>
+        /* 🌟 1. โซนพื้นหลังที่เป็นภาพเคลื่อนไหว (GIF) */
+        body {
+            font-family: 'Arial', sans-serif;
+            
+            /* 📌 เปลี่ยน bg-animate.gif เป็นชื่อไฟล์ GIF หรือลิงก์ภาพที่คุณต้องการใช้เป็นพื้นหลัง */
+            background-image: url('https://media1.tenor.com/m/d_uVLGPhPOgAAAAC/pink-purple.gif'); 
+            
+            background-size: cover;       /* บังคับให้รูปขยายเต็มหน้าจอ */
+            background-position: center;  /* จัดให้อยู่กึ่งกลาง */
+            background-attachment: fixed; /* ล็อกพื้นหลังไว้ไม่ให้ขยับตอนเลื่อนอ่านข้อความยาวๆ */
+            background-color: #febed3;    /* สีสำรอง */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* 📦 2. กรอบเนื้อหา (ขยายให้กว้างขึ้นเพื่อรองรับข้อความยาวๆ และรูป 3 รูป) */
+        .content-card {
+            background-color: rgba(255, 255, 255, 0.90); /* สีขาวโปร่งแสง 90% ให้อ่านข้อความง่าย */
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 500px; /* ขยายความกว้างการ์ดเป็น 500px */
+            width: 100%;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* 🖼️ 3. โซนเรียงรูป 3 รูป */
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* ระยะห่างระหว่างรูป */
+            width: 100%;
+            margin-bottom: 25px; /* ระยะห่างก่อนถึงข้อความ */
+        }
+
+        .image-gallery img {
+            width: 31%; /* แบ่งความกว้างให้ได้ 3 รูปพอดี */
+            aspect-ratio: 1 / 1; /* บังคับให้รูปเป็นสี่เหลี่ยมจัตุรัส จะได้เรียงสวยงาม */
+            object-fit: cover; /* ไม่ให้รูปเบี้ยว ตัดส่วนที่ล้นออกอัตโนมัติ */
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* 🔤 4. ตกแต่งข้อความยาวๆ */
+        .long-text {
+            font-size: 16px;
+            color: #2c3e50;
+            line-height: 1.8; /* เว้นบรรทัดให้กว้างขึ้น จะได้อ่านสบายตา */
+            margin-bottom: 25px;
+            text-align: left; /* จัดข้อความชิดซ้ายให้อ่านง่าย (หรือเปลี่ยนเป็น center ถ้ายากให้อยู่ตรงกลาง) */
+            width: 100%;
+        }
+
+        /* 🎬 5. ภาพเคลื่อนไหว (GIF) ใต้ข้อความ */
+        .bottom-gif {
+            width: 100%;
+            max-width: 150px; /* ขนาดของ GIF ด้านล่างสุด */
+            height: auto;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-card">
+        
+        <div class="image-gallery">
+            <img src="c:\Users\Nova\OneDrive - BUU\Desktop\P.jpg" alt="รูปที่ 1">
+            <img src="c:\Users\Nova\OneDrive - BUU\Desktop\S__16072708_0.jpg" alt="รูปที่ 2">
+            <img src="c:\Users\Nova\OneDrive - BUU\Desktop\S__16072710_0.jpg" alt="รูปที่ 3">
+        </div>
+
+        <div class="long-text">
+            <strong>Happy 5 Months Anniversary นะ! 💖</strong><br><br>
+            พิมพ์ข้อความยาวๆ ของคุณใส่ตรงนี้ได้เลยครับ จะพิมพ์ยาวแค่ไหนกรอบก็จะยืดตามอัตโนมัติครับ... <br>
+            ขอบคุณที่คอยเป็นรอยยิ้มให้กันในทุกๆ วันนะ วันไหนที่เหนื่อยก็ยังมีแกคอยรับฟังตลอดเลย <br>
+            เค้าอาจจะไม่ได้พูดบ่อยๆ แต่เค้ารักแกมากๆ น้าาา <br><br>
+            ขอให้เราเติบโตไปด้วยกันแบบนี้ไปเรื่อยๆ เลยนะ จับมือกันแน่นๆ นะ! 🌟
+        </div>
+
+        <img class="bottom-gif" src="https://media1.tenor.com/m/iP9Jm4-D1PEAAAAC/peluk.gif" alt="GIF ปิดท้ายน่ารักๆ">
+
+    </div>
+
+</body>
+</html>

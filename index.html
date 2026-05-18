@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome ❤️</title>
+    
+    <style>
+        /* 🖼️ 1. โซนรูปพื้นหลังเต็มหน้าจอ */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            
+            /* 📌 เปลี่ยน bg-photo.jpg เป็นชื่อไฟล์รูปพื้นหลังของคุณ */
+            background-image: url('https://media1.tenor.com/m/d_uVLGPhPOgAAAAC/pink-purple.gif'); 
+            background-color: rgba(203, 91, 255, 0.85);
+            background-size: cover;       /* ขยายรูปให้เต็มจอ */
+            background-position: center;  /* จัดให้รูปอยู่กึ่งกลางจอ */
+            background-attachment: fixed; /* ล็อกรูปพื้นหลังไว้ */
+            box-sizing: border-box;
+
+            /* จัดกล่องข้อความให้อยู่กึ่งกลางหน้าจอเป๊ะๆ ทั้งแนวตั้งและแนวนอน */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 📦 2. กล่องเนื้อหาตรงกลาง (กระจกฝ้าโปร่งแสง) */
+        .welcome-card {
+            background-color: rgba(255, 255, 255, 0.85); /* ขาวโปร่งแสง 85% */
+            backdrop-filter: blur(5px); /* เอฟเฟกต์เบลอหลังกระจก */
+            border-radius: 25px;
+            padding: 40px 30px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            width: 100%;
+            box-sizing: border-box;
+            
+            /* จัดสิ่งของข้างในกล่องให้เรียงเป็นเส้นตรงดิ่งลงมา */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* 📸 3. รูปภาพด้านบนสุดในกล่อง */
+        .center-photo {
+            width: 100%;
+            max-width: 150px; /* ขนาดความกว้างของรูป */
+            border: 4px solid white; /* เพิ่มขอบขาวให้รูปดูเด่น */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            object-fit: cover;
+            aspect-ratio: 1 / 1; /* บังคับสัดส่วนสี่เหลี่ยมจัตุรัส */
+            margin-bottom: 25px; /* ระยะห่างด้านล่างก่อนถึงข้อความ */
+        }
+
+        /* 🔤 4. โซนข้อความตรงกลาง */
+        .title-text {
+            font-size: 32px;
+            color: #7727d3; /* สีม่วงพาสเทลที่คุณชอบ */
+            font-weight: bold;
+            margin: 0 0 15px 0;
+            line-height: 1.0;
+        }
+
+        .sub-text {
+            font-size: 16px;
+            color: #461f51;
+            line-height: 1.6;
+            margin: 0 0 35px 0; /* เว้นระยะห่างด้านล่างก่อนถึงปุ่มกด */
+        }
+
+        /* 🖱️ 5. ปุ่มกดล่างสุดไปยังหน้าถัดไป */
+        .next-btn {
+            display: inline-block;
+            background-color: #E671EA; /* สีชมพูอมม่วงสว่างที่คุณชอบ */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none; /* ลบเส้นใต้ตัวหนังสือ */
+            padding: 14px 50px;
+            border-radius: 50px; /* ทำปุ่มทรงมนรี */
+            box-shadow: 0 5px 15px rgba(230, 113, 234, 0.4); /* เงาเรืองแสงของปุ่ม */
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        /* เอฟเฟกต์เวลาเอาเมาส์ชี้หรือเอานิ้วจิ้มปุ่ม */
+        .next-btn:hover {
+            background-color: #AA79E2; /* สลับเป็นสีม่วง */
+            transform: translateY(-3px); /* ปุ่มลอยขึ้นนิดนึงดูมีมิติ */
+            box-shadow: 0 8px 20px rgba(170, 121, 226, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="welcome-card">
+        
+        <img src="c:\Users\Nova\OneDrive - BUU\Desktop\Code\Lilac.jpg" alt="รูปของเรา" class="center-photo">
+        
+        <h1 class="title-text">Lilac</h1>
+        <p class="sub-text">
+            สัญลักษณ์ของความบริสุทธิ์ และรู้สึกขอบคุณ<br>
+            เป็นดอกไม้ที่สื่อถึงความเชื่อมั่นในความรัก<br>
+            ความหมาย คือ เธอให้ความรู้สึกเหมือนเป็นรักแรกที่ฉันรอคอย
+        </p>
+
+        <a href="next.html" class="next-btn">ถัดไป</a>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowers</title>
+
+    <style>
+        /* 🌟 1. โซนปรับแต่งพื้นหลัง (ล็อกให้อยู่กึ่งกลางหน้าจอเสมอ) */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(-45deg, #9BB1FF, #AA79E2, #CFA0F9, #E671EA, #FFC2EB);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+
+            /* จัดการ์ดให้อยู่กึ่งกลางหน้าจอแบบเป๊ะๆ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 📦 2. โซนกล่องการ์ด */
+        .login-card {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 40px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            max-width: 350px;
+            width: 100%;
+            
+            /* ล็อกเนื้อหาทุกอย่างในการ์ดให้อยู่ตรงกลาง (Center) */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* 🖼️ 3. ภาพเคลื่อนไหว (เพิ่ม margin: 0 auto ล็อกให้อยู่ตรงกลาง) */
+        .login-card img {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            border-radius: 12px;
+            margin: 0 auto 20px auto; 
+            display: block; /* บังคับให้เป็นบล็อกเพื่อให้จัดกลางได้สมบูรณ์ */
+        }
+
+        /* 🔤 4. ข้อความหลัก */
+        .main-title {
+            font-size: 22px;
+            color: #2c3e50;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+            width: 100%;
+        }
+
+        /* 🔒 5. โซนรหัสผ่าน */
+        .password-zone {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* บังคับให้ช่องพิมพ์และปุ่มอยู่กึ่งกลาง */
+            gap: 15px;
+            width: 100%;
+        }
+
+        .password-input {
+            width: 90%; /* ลดความกว้างลงนิดนึงให้ดูมีขอบสวยๆ */
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #dcdde1;
+            border-radius: 10px;
+            box-sizing: border-box;
+            outline: none;
+            text-align: center; /* ล็อกให้ตัวหนังสือที่พิมพ์อยู่ตรงกลาง */
+            transition: border-color 0.2s;
+        }
+
+        .password-input:focus {
+            border-color: #5CCBFF; 
+        }
+
+        .submit-btn {
+            background-color: #A742EB;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px;
+            width: 90%; /* ให้ปุ่มกว้างเท่ากับช่องใส่รหัส */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            text-align: center; /* ล็อกข้อความในปุ่มให้อยู่ตรงกลาง */
+        }
+
+        .submit-btn:hover {
+            background-color: #CE95F4;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <img src="https://media1.tenor.com/m/1nIDXbABxgsAAAAC/gif-gifkk.gif" alt="รูปภาพเคลื่อนไหว">
+        
+        <h1 class="main-title">คำใบ้<br>ชื่อดอกไม้ ตัวอักษร 5 ตัว❤️</h1>
+        
+        <div class="password-zone">
+            <input type="password" id="pwdInput" class="password-input" placeholder="ใส่ชื่อดอกไม้...">
+            
+            <button class="submit-btn" onclick="checkPassword()">ยืนยันรหัสผ่าน</button>
+        </div>
+    </div>
+
+    <script>
+    // 📌 ตั้งรหัสผ่านของคุณตรงนี้ (แนะนำให้ใช้ตัวพิมพ์เล็กทั้งหมดถ้าเป็นภาษาอังกฤษ)
+    const MY_PASSWORD = "lilac"; 
+
+    function checkPassword() {
+        // .trim() = ตัดช่องว่างหน้าหลังที่เผลอเคาะออก
+        // .toLowerCase() = แปลงภาษาอังกฤษให้เป็นตัวพิมพ์เล็กทั้งหมดอัตโนมัติ
+        let userTyped = document.getElementById("pwdInput").value.trim().toLowerCase();
+
+        // ตรวจสอบรหัส (เทียบกับรหัสที่เราตั้งไว้ โดยแปลงเป็นตัวพิมพ์เล็กเหมือนกัน)
+        if (userTyped === MY_PASSWORD.toLowerCase()) {
+            alert("🎉 รหัสถูกต้อง! เธอเก่งที่สุดด");
+            window.location.href = "second.html"; 
+        } else {
+            alert("❌ รหัสผิดน้า ลองย้อนกลับไปดูก่อนสิ");
+            document.getElementById("pwdInput").value = ""; 
+        }
+    }
+</script>
+
+</body>
+</html>
